@@ -1,3 +1,6 @@
+body {
+  background-color: #eee;
+}
 header {
   position: fixed;
   width: 100%;
@@ -41,7 +44,11 @@ a.btn {
   padding-right: 25px;
   padding-left: 25px;
 }
-
+.highlight {
+  padding-top: 40px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid #ccc;
+}
 .circle {
   width: 77px;
   height: 77px;
@@ -54,4 +61,39 @@ a.btn {
   height: 90%;
   border-radius: 50%;
   transform: translate(5%, 5%);
+}
+
+.pageLink {
+  text-align: center;
+  width: 60px;
+  margin: -1px 40px;
+  padding-top: 20px;
+  border-top: 1px solid #000;
+}
+
+.contentArea img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.relatedAccArea {
+  background-color: #fff;
+}
+.relatedAccounts {
+  width: 100%;
+  overflow: hidden;
+}
+.cards {
+  min-width: 200px;
+}
+.cardImgArea {
+  width: 50px;
+  height: 50px;
+}
+.cardImgArea img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
