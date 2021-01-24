@@ -1,3 +1,6 @@
+::-webkit-scrollbar {
+  display: none;
+}
 body {
   background-color: #eee;
 }
@@ -83,6 +86,7 @@ a.btn {
 .relatedAccounts {
   width: 100%;
   overflow: hidden;
+  overflow: auto;
 }
 .cards {
   min-width: 200px;
@@ -96,4 +100,27 @@ a.btn {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.relative-btn-right {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.466);
+  border-radius: 50%;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+}
+.relative-btn-left {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.466);
+  border-radius: 50%;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+}
+
+.relative-btn-left.hide {
+  display: none !important;
 }
