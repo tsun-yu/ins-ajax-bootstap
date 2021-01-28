@@ -2,13 +2,17 @@ const slr = (id) => document.querySelector(id);
 
 $.ajax({
   method: "GET",
-  // url: "https://www.instagram.com/graphql/query/?query_id=17888483320059182&id=39431801958&first=12",
-  url: "./ins.json",
+  url: "https://www.instagram.com/p.league.official/?__a=1",
+  // url: "./ins.json",
+  // url:
+  //   "https://instagram.com/graphql/query/?query_id=17888483320059182&id=39431801958&first=12",
 }).done(function (result) {
-  console.log(result.graphql.user.edge_follow.count);
+  // console.log(result.data.user.edge_owner_to_timeline_media.edges[0]);
 
   //profile image
-  //  document.querySelector(".profileImg > img").src = `${result.graphql.user.profile_pic_url_hd}`;
+  document.querySelector(
+    ".profileImg > img"
+  ).src = `${result.graphql.user.profile_pic_url_hd}`;
   $(".profileImg > img").attr("src", result.graphql.user.profile_pic_url_hd);
 
   //info
@@ -27,7 +31,7 @@ $.ajax({
     $(".contentArea").append(display);
   }
 
-  //related account
+  // related account
   let relatedArr = result.graphql.user.edge_related_profiles.edges;
   for (let i = 0; i < relatedArr.length; i++) {
     let display = `<div class="cards border px-2 pt-2 pb-4 mx-3">
@@ -46,9 +50,9 @@ $.ajax({
 //highlight
 $.ajax({
   method: "GET",
-  // url:
-  //   "https://www.instagram.com/graphql/query/?query_hash=d4d88dc1500312af6f937f7b804c68c3&variables={%22user_id%22:%2239431801958%22,%22include_chaining%22:true,%22include_reel%22:true,%22include_suggested_users%22:false,%22include_logged_out_extras%22:false,%22include_highlight_reels%22:true,%22include_live_status%22:true}",
-  url: "./ins-highlight.json",
+  url:
+    "https://www.instagram.com/graphql/query/?query_hash=d4d88dc1500312af6f937f7b804c68c3&variables={%22user_id%22:%2239431801958%22,%22include_chaining%22:true,%22include_reel%22:true,%22include_suggested_users%22:false,%22include_logged_out_extras%22:false,%22include_highlight_reels%22:true,%22include_live_status%22:true}",
+  // url: "./ins-highlight.json",
 }).done(function (result) {
   let highlightArr = result.data.user.edge_highlight_reels.edges;
   let display = ``;
